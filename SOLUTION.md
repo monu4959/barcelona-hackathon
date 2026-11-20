@@ -1,9 +1,9 @@
 # How to run
 
 This repository holds the pipeline, plus the challenge's starter code and scorer (`starter/`,
-`evaluation/`, by Metrica Sports, MIT). The method, the data we
+`evaluation/`, by Metrica Sports, MIT). The method, the data I
 used and dropped, the possession rules and the limitations are in
-**[TECHNICAL_REPORT.md](TECHNICAL_REPORT.md)**. This page covers how to run it.
+[TECHNICAL_REPORT.md](TECHNICAL_REPORT.md). This page covers how to run it.
 
 ## Reproduce the submission
 
@@ -15,12 +15,16 @@ venv/Scripts/pip install -r requirements-pipeline.txt        # Windows (venv/bin
 # the match bundle, unpacked as in data/README.md (or point MTAH_DATA_DIR at it)
 export MTAH_DATA_DIR=/path/to/mtah2027                       # PowerShell: $env:MTAH_DATA_DIR = "..."
 
-python reproduce.py --team monu4959
+python reproduce.py
 ```
 
 Output: `evaluation/results/monu4959.csv`, validated by `evaluation/validate_submission.py`.
 From a fresh clone, a fresh virtual environment and an empty work directory, this reproduces the
 submitted file byte for byte. It takes about 10 minutes on a laptop CPU, plus a 2.5 GB download of the external data.
+
+Requirements: `requirements-pipeline.txt` is everything the pipeline needs. `requirements.txt`
+(numpy and pandas) is enough for the scorer alone, and `requirements-starter.txt` is only for the
+notebooks in `starter/`.
 
 Environment variables (all optional):
 
@@ -44,14 +48,14 @@ Environment variables (all optional):
 | 8 | `evaluation/validate_submission.py` | format check |
 
 Every script has a docstring with its rules and constants. `analysis/eda.py` holds the data
-loaders (and the exploratory analysis we started from).
+loaders (and the exploratory analysis I started from).
 
 ## What is not in this repository
 
-- **The match data** and anything that would reconstruct it: no tracking exports, video clips or
-  frame-level files. `data/`, `work/`, `analysis/out/` and `evaluation/results/*.csv` are
+- The match data and anything that would reconstruct it: no tracking exports or frame-level
+  files. The one exception is the 5-minute demo video in `media/`, published with permission. `data/`, `work/`, `analysis/out/` and `evaluation/results/*.csv` are
   gitignored.
-- **The dropped ball detectors** (one trained on the provided video, removed after the organisers'
+- The dropped ball detectors (one trained on the provided video, removed after the organisers'
   clarification; one trained on external images, which transferred poorly). Neither affects the
   submission. See the technical report.
 

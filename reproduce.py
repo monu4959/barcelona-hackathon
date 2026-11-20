@@ -1,8 +1,8 @@
 """Regenerate the submission file from the provided data, in one command.
 
-    python reproduce.py --team <team_name>
+    python reproduce.py [--name NAME]          # default name: monu4959
 
-Writes evaluation/results/<team_name>.csv and validates it. Every step is a script of its own and
+Writes evaluation/results/<NAME>.csv and validates it. Every step is a script of its own and
 can be run by hand in the same order (see SOLUTION.md):
 
   1. dead_ball/fetch_dfl.py          external DFL / IDSSE matches (CC BY 4.0), pinned revision
@@ -40,7 +40,7 @@ def run(script, *args, env=None, isolated=False):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--team", required=True, help="team name: the file is evaluation/results/<team>.csv")
+    parser.add_argument("--name", default="monu4959", help="output file: evaluation/results/<name>.csv")
     args = parser.parse_args()
     os.environ.setdefault("MTAH_WORK_DIR", os.path.join(ROOT, "work"))
 
@@ -50,8 +50,8 @@ def main():
     run("dead_ball/stoppage_model.py")
     run("calibration/dfl_check.py")
     run("dead_ball/detect_dead.py", env=FINAL)
-    run("possession/estimate_possession.py", "--name", args.team, env=FINAL)
-    run("evaluation/validate_submission.py", os.path.join("evaluation", "results", args.team + ".csv"))
+    run("possession/estimate_possession.py", "--name", args.name, env=FINAL)
+    run("evaluation/validate_submission.py", os.path.join("evaluation", "results", args.name + ".csv"))
 
 
 if __name__ == "__main__":
