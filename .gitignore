@@ -40,6 +40,7 @@ data/*
 .idea/
 .vscode/
 __pycache__/
+.pytest_cache/
 *.py[cod]
 .venv/
 venv/
