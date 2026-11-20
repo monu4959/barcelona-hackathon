@@ -7,8 +7,6 @@ Built for *More than a Hack 2027*, run by Metrica Sports, FC Barcelona and the M
 Barcelona. Each of the match's 199,319 video frames gets one label: **Barcelona in possession**,
 **Athletic in possession**, or **ball dead**.
 
-[![Demo: the pipeline's labels against the official labels, on the tactical camera](media/preview.gif)](media/possession_demo.mp4)
-
 ▶ **[Watch the 5-minute demo video](media/possession_demo.mp4)**: the official labels against the
 pipeline's, frame by frame, on the tactical camera.
 
@@ -19,8 +17,8 @@ was frozen, and nothing was tuned on it.
 
 | | This pipeline | Organisers' best baseline |
 |---|---|---|
-| Frame accuracy | **86.7%** | — |
-| In-play / dead F1 | **0.971** | — |
+| Frame accuracy | **86.7%** | 72.7% |
+| In-play / dead F1 | **0.971** | 0.899 |
 | Macro F1 (Barcelona / Athletic / dead) | **0.867** | 0.581 |
 | Possession-spell F1 (the ranking metric) | **0.500** | 0.424 |
 | Possessions found (truth: 17) | 19 | 16 |
