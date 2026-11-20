@@ -1,0 +1,20 @@
+# Everything reproduce.py needs, pinned to the versions the submission file was produced with
+# (Python 3.12.6, Windows 11, CPU only). No GPU, no deep-learning framework.
+numpy==2.5.2
+pandas==3.1.0
+scikit-learn==1.5.2
+scipy==1.18.1
+joblib==1.6.0
+threadpoolctl==3.8.0
+matplotlib==3.11.2
+# matplotlib's and pandas' own dependencies, pinned too
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.67.0
+kiwisolver==1.5.1
+packaging==26.3
+pillow==12.3.0
+pyparsing==3.3.3
+python-dateutil==3.0.0
+six==1.17.0
+tzdata==2026.5

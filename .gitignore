@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------------------------
+# This repository is public. The full-match ground truth is not.
+#
+# Everything below either is a private asset, would leak the answer, or is generated output. The
+# history is public, so anything committed once is committed forever.
+# ---------------------------------------------------------------------------------------------
+
+# -- private ground truth ----------------------------------------------------------------------
+# The public ground truth is evaluation/gt/*_possession_gt_public.csv and is committed on purpose.
+# The full-match files below are graded over all 158857 frames and must never be published.
+*_possession_gt.csv
+*_possession_gt_meta.json
+*_possession_gt_reference.csv
+possession_by_frame.pkl
+
+# -- submissions -------------------------------------------------------------------------------
+# Any file in results/ is a set of labels for the whole match. A perfect one is a copy of the
+# ground truth, so the folder ships empty and stays that way.
+evaluation/results/*.csv
+
+# ...with one deliberate exception. The baselines are computed from the ATD alone -- the same ATD
+# every enrolled participant has -- and never read a ground truth of any kind, so they carry no
+# information about the answer. They ship so that a fresh clone has something real to score.
+!evaluation/results/baseline_*.csv
+evaluation/reports/
+evaluation/scoreboard.csv
+
+# -- gated data --------------------------------------------------------------------------------
+# data/ is committed empty, with only its README, so the folder participants are told to unpack
+# into actually exists in a fresh clone. Everything they put in it stays out of git.
+data/*
+!data/README.md
+
+*.mp4
+!media/possession_demo.mp4
+*.gzip
+*.pl3container
+
+# -- editors and build artifacts ---------------------------------------------------------------
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.DS_Store
+
+# -- ball recovery work dir: crops of the match video, never publish --------------------------
+/work/
+
+# -- model weights (downloaded COCO checkpoints) ----------------------------------------------
+*.pt
+
+# -- analysis cache (a parsed copy of the tracking data) ---------------------------------------
+analysis/out/

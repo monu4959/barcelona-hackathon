@@ -1,0 +1,7 @@
+{
+  "HOLD_S": 0.5,
+  "CONTROL_M": 3.0,
+  "PASS_GAP": 75,
+  "BACKTRACK": 0,
+  "chosen_on": "DFL/IDSSE (calibration/dfl_check.py)"
+}
