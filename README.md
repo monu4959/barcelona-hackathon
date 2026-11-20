@@ -2,6 +2,8 @@
 
 # Barcelona Hackathon: who has the ball?
 
+[![tests](https://github.com/monu4959/barcelona-hackathon/actions/workflows/tests.yml/badge.svg)](https://github.com/monu4959/barcelona-hackathon/actions/workflows/tests.yml)
+
 
 
 https://github.com/user-attachments/assets/f499fe64-7500-4656-ae01-8a7292ca4128
@@ -126,6 +128,7 @@ The full write-up, including what didn't work and why, is in
 | `calibration/` | the end-to-end check on Bundesliga data and the settings chosen there |
 | `analysis/` | data loaders and exploratory analysis |
 | `evaluation/`, `starter/` | the competition's scorer, validator and loaders (by Metrica Sports, MIT) |
+| `tests/` | unit tests of the rules, the ball track, the stoppage model's post-processing and the scorer |
 | `media/` | the demo video and the script that makes it |
 | `docs/challenge/` | the original challenge description and rules |
 
@@ -138,6 +141,14 @@ licensed to competition participants only.
 python -m venv venv && venv/Scripts/pip install -r requirements-pipeline.txt   # Python 3.12, CPU only
 export MTAH_DATA_DIR=/path/to/match/data
 python reproduce.py                       # about 10 minutes, plus a 2.5 GB download of the open data
+```
+
+The tests don't need the match data: they check the rules on small made-up situations (a ball
+crossing the touchline, a brief opponent touch, a stoppage) and the scorer on the public labels.
+They run on every push.
+
+```bash
+pip install pytest && pytest
 ```
 
 With the data, a fresh clone reproduces the submitted file byte for byte. The steps are listed in
