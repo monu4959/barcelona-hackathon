@@ -53,7 +53,7 @@ loaders (and the exploratory analysis I started from).
 ## What is not in this repository
 
 - The match data and anything that would reconstruct it: no tracking exports or frame-level
-  files. The one exception is the 5-minute demo video in `media/`, published with permission. `data/`, `work/`, `analysis/out/` and `evaluation/results/*.csv` are
+  files. The one exception is the 2.5-minute demo video in `media/`, published with permission. `data/`, `work/`, `analysis/out/` and `evaluation/results/*.csv` are
   gitignored.
 - The dropped ball detectors (one trained on the provided video, removed after the organisers'
   clarification; one trained on external images, which transferred poorly). Neither affects the

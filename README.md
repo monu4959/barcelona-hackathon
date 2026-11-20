@@ -21,8 +21,8 @@ would get, and a question that sounds simple until the ball disappears from the 
 chance to build something end to end under real constraints: a deadline, no labels for the match
 itself, and a rules clarification halfway through that forced me to rebuild the pipeline.
 
-▶ [Watch the 5-minute demo video](media/possession_demo.mp4): the official labels against the
-pipeline's, frame by frame, on the tactical camera.
+▶ [Watch the demo video](media/possession_demo.mp4) (2.5 minutes): the pipeline's label for every
+frame, drawn on the tactical camera.
 
 ## Results
 
@@ -61,8 +61,8 @@ it on seven open Bundesliga matches with the ball hidden the same way it goes mi
 The tracking data has no ball on 41% of the frames that are scored. The gaps come in long
 blocks (median 10.7 s), mostly around stoppages and restarts, which are exactly where possession
 changes. On top of that, the competition rules forbid training on this match's video or labels.
-So everything has to come from the tracking data and from outside data. (The demo video shows an
-easier stretch, where the ball is tracked most of the time.)
+So everything has to come from the tracking data and from outside data. (The demo video comes from
+the labelled 5 minutes, an easier stretch where the ball is tracked most of the time.)
 
 ## How it works
 
