@@ -1,5 +1,11 @@
 # Barcelona Hackathon: who has the ball?
 
+
+
+https://github.com/user-attachments/assets/856faa89-2f5d-4cf2-aaf8-fb9a62d7e3d1
+
+
+
 Frame-by-frame ball possession for a full LaLiga match (FC Barcelona vs Athletic Club), worked out
 from automatic player and ball tracking data. No video model.
 
